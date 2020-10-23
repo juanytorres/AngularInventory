@@ -1,0 +1,50 @@
+<h1>Inventory</h1>
+<nav class="navbar navbar.dark bg-primary">
+    <a class="navbar-brand">
+        Inventory Items
+    </a>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <ul class="List-group">
+                <li *ngFor="let inventory of inventoryAray"
+                class="List-group-item">
+                    {{inventory.IdItem }}
+                    {{inventory.Name}}
+                    {{inventory.Amount }}
+                    {{inventory.InventoryCode }}
+                </li>
+            </ul>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class ="card-title">
+                        Insert a New Item
+                    </div> 
+                    <div class="form-group" >
+                        <input type="text" placeholder="Insert Item" class="form-control">
+                    </div>
+                    <div class="form-group" >
+                        <input type="text" placeholder="Insert Name" class="form-control">
+                    </div>
+                    <div class="form-group" >
+                        <input type="text" placeholder="Insert Amount " class="form-control">
+                    </div>
+                    <div class="form-group" >
+                        <input type="text" placeholder="Insert InventoryCode " class="form-control">
+                    </div>
+                    <button  
+                    (click)="addInventoryItem()" class="btn btn-primary" >
+                        Submit
+                    </button>
+                    <button *ngIf ="selectedInventoryItem.IdItem!==0" class="btn btn-danger"
+                        (click)="deleteInventoryItem()" >
+                        Delete
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

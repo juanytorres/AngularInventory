@@ -1,0 +1,10 @@
+{
+ "/invapi":{
+ "target": "http://localhost:9096",
+ "secure": false,
+ "loglevel": "debug",
+ "pathRewrite": {
+     "^/api":""
+ }
+ }
+}
